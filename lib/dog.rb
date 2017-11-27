@@ -6,10 +6,17 @@ class Dog
 
   def initialize(name)
     @name = name
+    @@all.push(self)
   end
 
   def self.clear_all
-    @all = []
+    @@all = []
+  end
+
+  def self.all
+    @@all.each do |dog|
+      puts dog.name
+    end
   end
 
 end
